@@ -4,8 +4,11 @@ Fake News Detection using NLP is a machine learning project that uses Natural La
 # Dataset
 
 The Dataset is too Large to upload on Github.
+
 Download it from Google Drive:
+
 Fake_News_Dataset = https://drive.google.com/file/d/1V2beeZst4c7BCCeoMEhAORSKR5Yxqsby/view?usp=drive_link
+
 True_News_Dataset = https://drive.google.com/file/d/18Bkyfhb-nbKB6xYhkkHyJ7Sk-g98dQZn/view?usp=drive_link
 
 
