@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truth Check</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#061826;
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    border-bottom:1px solid #18384d;
+    background:#071d2d;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#00d9ff;
+}
+
+nav a{
+    color:#c7d7e3;
+    text-decoration:none;
+    margin-left:30px;
+}
+
+nav a:hover{
+    color:#00d9ff;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.background span{
+    position:absolute;
+    font-size:50px;
+    font-weight:bold;
+    color:rgba(0,217,255,0.035);
+    white-space:nowrap;
+    transform:rotate(-15deg);
+    animation:float 8s infinite ease-in-out;
+}
+
+.background span:nth-child(1){top:15%;left:5%}
+.background span:nth-child(2){top:35%;left:55%}
+.background span:nth-child(3){top:60%;left:10%}
+.background span:nth-child(4){top:80%;left:60%}
+
+@keyframes float{
+    50%{
+        transform:translateX(40px) rotate(-15deg);
+    }
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px 50px;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid #00d9ff;
+    border-radius:20px;
+    color:#00d9ff;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:55px;
+    margin:20px 0 15px;
+}
+
+.hero h1 span{
+    color:#00d9ff;
+}
+
+.hero p{
+    color:#9db2c1;
+    font-size:17px;
+    max-width:600px;
+    margin:auto;
+    line-height:1.6;
+}
+
+.detector{
+    width:90%;
+    max-width:800px;
+    margin:30px auto 80px;
+    padding:30px;
+    background:#0c2638;
+    border:1px solid #1c465d;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.detector h2{
+    margin-bottom:8px;
+}
+
+.detector p{
+    color:#8da6b7;
+    margin-bottom:20px;
+}
+
+textarea{
+    width:100%;
+    height:180px;
+    padding:18px;
+    background:#061826;
+    color:white;
+    border:1px solid #28536a;
+    border-radius:12px;
+    resize:none;
+    outline:none;
+    font-size:16px;
+}
+
+textarea:focus{
+    border-color:#00d9ff;
+}
+
+button{
+    width:100%;
+    margin-top:18px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#00c8ef;
+    color:#03202c;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00e1ff;
+}
+
+#result{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:#102f41;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.features{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    padding-bottom:80px;
+}
+
+.features h2{
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#0c2638;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #1c465d;
+}
+
+.card:hover{
+    border-color:#00d9ff;
+    transform:translateY(-5px);
+    transition:.3s;
+}
+
+.card .icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#8da6b7;
+    margin-top:10px;
+    line-height:1.5;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid #18384d;
+    color:#708898;
+}
+
+@media(max-width:700px){
+
+    nav{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .detector{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        📰 Truth Check<span></span>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#detector">Detector</a>
+        <a href="#about">About</a>
+    </nav>
+
+</header>
+
+<div class="background">
+    <span>BREAKING NEWS</span>
+    <span>FACT CHECK</span>
+    <span>FAKE NEWS</span>
+    <span>NEWS ALERT</span>
+</div>
+
+<section class="hero">
+
+    <div class="tag">🤖 AI Powered </div>
+
+    <h1>
+        Discover the <span>Truth</span><br>
+        Behind Every News
+    </h1>
+
+    <p>
+        Enter a news article check whether
+        the information appears to be REAL or FAKE.
+    </p>
+
+</section>
+
+<section class="detector" id="detector">
+
+    <h2>🔍 Fake News Detector</h2>
+
+    <p>Paste your news article below for analysis</p>
+
+    <textarea id="news"
+    placeholder="Enter your news article here..."></textarea>
+
+    <button onclick="checkNews()">
+        Analyze News
+    </button>
+
+    <div id="result"></div>
+
+</section>
+
+<section class="features" id="about">
+
+    <h2>How It Works</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📝</div>
+            <h3>Enter News</h3>
+            <p>Paste your news article or headline.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧠</div>
+            <h3>Analysis</h3>
+            <p>The system analyzes the text using NLP techniques.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎯</div>
+            <h3>Get Result</h3>
+            <p>View the predicted result instantly.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+     Fake News Detection System 
+</footer>
+
+<script>
+
+function checkNews(){
+
+    let text=document.getElementById("news").value;
+    let result=document.getElementById("result");
+
+    if(text.trim()==""){
+        result.style.display="block";
+        result.style.color="orange";
+        result.innerHTML="⚠️ Please enter some news";
+        return;
+    }
+
+    let words=["shocking","secret","unbelievable","rumor","fake"];
+
+    let found=words.some(word =>
+        text.toLowerCase().includes(word)
+    );
+
+    result.style.display="block";
+
+    if(found){
+        result.style.color="#ff5264";
+        result.innerHTML="❌ Potentially Fake News";
+    }
+    else{
+        result.style.color="#32e68a";
+        result.innerHTML="✅ Likely Real News";
+    }
+}
+
+</script>
+
+</body>
+</html>
